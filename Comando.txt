@@ -1,0 +1,3 @@
+Comando:
+g++ -Wall -g -ILib -c  main.cpp -o main.o
+g++ -LLib -o bin/debug/TCC mainS.o -lBox2D

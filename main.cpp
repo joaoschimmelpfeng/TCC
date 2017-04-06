@@ -1,4 +1,5 @@
 #include <Box2D/Box2D.h>
+#include <time.h>
 #include <stdio.h>
 
 int main(int argc, char** argv)
@@ -28,22 +29,17 @@ int main(int argc, char** argv)
 	float32 timeStep = 1.0f / 60.0f;
 	int32 velocityIterations = 6;
 	int32 positionIterations = 2;
-
-	for (int32 i = 0; i < 1000000; ++i)
+    
+    clock_t tStart = clock();
+	for (int32 i = 0; i < 5000000; ++i)
 	{
 		world.Step(timeStep, velocityIterations, positionIterations);
 
-		//Fun‹o de fisica.
+		//Fun‹o de aplicar impulso.
 		body->ApplyAngularImpulse(45, 1);
 
 	}
-
-
-
-	// When the world destructor is called, all bodies and joints are freed. This can
-
-	// create orphaned pointers, so be careful about your world management.
-
+    printf("Tempo levado: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
 
 
 	return 0;

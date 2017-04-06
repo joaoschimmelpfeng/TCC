@@ -1,0 +1,14 @@
+Testes sem -O:
+12.85s
+12.54s
+12.58s
+
+Testes com -O:
+12.46s
+12.47s
+12.44s
+
+Testes com -O3:
+12.46s
+12.43s
+12.43s
