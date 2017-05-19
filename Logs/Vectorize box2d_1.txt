@@ -1,0 +1,1342 @@
+Logs do rpass vectorize no box2D:
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp:197:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 0; i < m_manifold.pointCount; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp:197:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp:204:4: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                        for (int32 j = 0; j < oldManifold.pointCount; ++j)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp:204:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 31%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ContactSolver.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ContactSolver.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:116:4: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                        }
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:107:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (int32 j = 0; j < pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:215:4: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                        }
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:186:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (int32 j = 0; j < pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:275:3: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:275:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:349:4: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                        for (int32 j = 0; j < pointCount; ++j)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:349:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:319:3: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:319:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:611:3: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < vc->pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:611:3: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:696:3: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:696:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:787:3: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp:787:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 34%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp
+[ 36%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp
+[ 38%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp
+[ 40%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp
+[ 42%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp
+[ 44%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2PolygonContact.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/Contacts/b2PolygonContact.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp
+[ 46%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2Body.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/b2Body.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:453:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Fixture* f = m_fixtureList; f; f = f->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:453:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:146:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        while (ce)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:146:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:161:16: remark: 
+      loop not vectorized: call instruction cannot be vectorized
+      [-Rpass-analysis=loop-vectorize]
+                        broadPhase->TouchProxy(f->m_proxies[i].proxyId);
+                                    ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:159:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (int32 i = 0; i < proxyCount; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:320:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        }
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:308:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (b2Fixture* f = m_fixtureList; f; f = f->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:453:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Fixture* f = m_fixtureList; f; f = f->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:453:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:233:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        while (*node != NULL)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:233:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:263:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:252:24: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                b2Contact* c = edge->contact;
+                                     ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:408:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (b2JointEdge* jn = m_jointList; jn; jn = jn->next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:408:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:440:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Fixture* f = m_fixtureList; f; f = f->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:440:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:487:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Fixture* f = m_fixtureList; f; f = f->m_next)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:487:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:494:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                while (ce)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:494:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:474:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Fixture* f = m_fixtureList; f; f = f->m_next)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:474:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:547:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Fixture* f = m_fixtureList; f; f = f->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Body.cpp:547:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 48%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2ContactManager.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/b2ContactManager.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp:122:8: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                        if (bodyB->ShouldCollide(bodyA) == false)
+                            ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp:109:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        while (c)
+        ^
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp:19:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2ContactManager.h:22:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2BroadPhase.h:205:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        }
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2BroadPhase.h:191:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_moveCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2BroadPhase.h:225:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                while (i < m_pairCount)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2BroadPhase.h:225:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp:201:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        while (edge)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp:201:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp:19:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2ContactManager.h:22:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2BroadPhase.h:24:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2DynamicTree.h:174:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        while (stack.GetCount() > 0)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2DynamicTree.h:174:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2ContactManager.cpp:19:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2ContactManager.h:22:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2BroadPhase.h:25:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3973:25: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                while (!__comp(*--__j, *__m))
+                        ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3973:25: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3970:17: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                while (__comp(*__i, *__m))
+                ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3970:17: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3937:32: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                        while (__comp(*__first, *--__j))
+                               ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3937:32: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3935:25: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                        while (!__comp(*__first, *__i))
+                        ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3935:25: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3916:25: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                        while (true)
+                        ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3916:25: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3908:28: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                if (__i == --__j)
+                           ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3908:28: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3741:13: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+            do
+            ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3741:13: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3787:13: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+            do
+            ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:3787:13: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 51%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2Fixture.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/b2Fixture.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:59:2: remark: 
+      loop not vectorized: unsafe dependent memory operations in loop. Use
+      #pragma loop distribute(enable) to allow loop distribution to attempt to
+      isolate the offending operations into a separate loop
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < childCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:59:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:129:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_proxyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:129:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:142:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_proxyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:142:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:159:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_proxyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:159:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:200:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:192:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        while (edge)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:214:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_proxyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:214:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:200:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:192:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        while (edge)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:214:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_proxyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:214:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:283:4: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                        for (int32 i = 0; i < s->m_count; ++i)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:283:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:270:4: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                        for (int32 i = 0; i < s->m_count; ++i)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Fixture.cpp:270:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 53%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2Island.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/b2Island.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:218:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:190:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_bodyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:251:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_jointCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:251:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:262:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < m_jointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:262:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:275:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_bodyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:275:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:315:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < m_jointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:315:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:330:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_bodyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:330:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:531:3: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < vc->pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:531:3: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:360:61: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+  ...b->m_angularVelocity * b->m_angularVelocity > angTolSqr ||
+                                                             ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:351:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (int32 i = 0; i < m_bodyCount; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:375:4: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                        for (int32 i = 0; i < m_bodyCount; ++i)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:375:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:531:3: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < vc->pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:531:3: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:390:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_bodyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:390:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:411:37: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                bool contactsOkay = contactSolver.SolveTOIPositionConstr...
+                                                  ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:411:37: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:462:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < subStep.velocityIterations; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:462:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:473:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_bodyCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:473:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:531:3: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < vc->pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2Island.cpp:531:3: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+[ 55%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2World.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/b2World.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:75:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                while (f)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:75:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:150:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:142:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        while (je)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:160:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        while (ce)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:160:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:178:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:170:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        while (f)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:360:4: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                        }
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:353:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                while (edge)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:261:4: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                        }
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:254:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                while (edge)
+                ^
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:20:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2Body.h:645:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:378:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (b2Body* b = m_bodyList; b; b = b->m_next)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:400:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Body* b = m_bodyList; b; b = b->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:400:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:404:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Contact* c = m_contactManager.m_contactList; c; c = c->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:404:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:408:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Joint* j = m_jointList; j; j = j->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:408:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:544:4: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                        }
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:537:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (int32 i = 0; i < island.m_bodyCount; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:511:9: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                                if (other->IsActive() == false)
+                                    ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:501:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                        for (b2JointEdge* je = b->m_jointList; je; je = ...
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:479:17: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                                if (sensorA || sensorB)
+                                            ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:459:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                        for (b2ContactEdge* ce = b->m_contactList; ce; c...
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:553:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Body* b = m_bodyList; b; b = b->GetNext())
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:553:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:583:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Body* b = m_bodyList; b; b = b->m_next)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:583:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:589:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Contact* c = m_contactManager.m_contactList; c; ...
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:589:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:879:4: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                        for (b2ContactEdge* ce = body->m_contactList; ce...
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:879:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:771:5: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                                for (b2ContactEdge* ce = body->m_contact...
+                                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:771:5: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:605:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Contact* c = m_contactManager.m_contactList; c; ...
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:605:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:967:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Body* body = m_bodyList; body; body = body->GetNext())
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:967:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:967:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:967:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:19:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2World.h:22:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Common/b2Math.h:59:37: remark: 
+      loop not vectorized: instruction return type cannot be vectorized
+      [-Rpass-analysis=loop-vectorize]
+        b2Vec2(float32 xIn, float32 yIn) : x(xIn), y(yIn) {}
+                                           ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1098:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                        for (int32 i = 0; i < vertexCount; ++i)
+                        ^
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:19:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2World.h:22:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Common/b2Math.h:59:37: remark: 
+      loop not vectorized: instruction return type cannot be vectorized
+      [-Rpass-analysis=loop-vectorize]
+        b2Vec2(float32 xIn, float32 yIn) : x(xIn), y(yIn) {}
+                                           ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1074:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                        for (int32 i = 1; i < count; ++i)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1173:14: remark: 
+      loop not vectorized: loop contains a switch statement
+      [-Rpass-analysis=loop-vectorize]
+                                else if (b->GetType() == b2_staticBody)
+                                         ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1167:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                        for (b2Fixture* f = b->GetFixtureList(); f; f = ...
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1195:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Joint* j = m_jointList; j; j = j->GetNext())
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1195:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1204:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Contact* c = m_contactManager.m_contactList; c; ...
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1204:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1230:5: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                                for (int32 i = 0; i < f->m_proxyCount; ++i)
+                                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1230:5: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1248:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (b2Body* b = m_bodyList; b; b = b->GetNext())
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1248:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1285:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Body* b = m_bodyList; b; b = b->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1285:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1292:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Joint* j = m_jointList; j; j = j->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1292:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1313:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Body* b = m_bodyList; b; b = b->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1313:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1321:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (b2Joint* j = m_jointList; j; j = j->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1321:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1338:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        }
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1328:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (b2Joint* j = m_jointList; j; j = j->m_next)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1351:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        }
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:1341:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (b2Joint* j = m_jointList; j; j = j->m_next)
+        ^
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2World.cpp:19:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2World.h:25:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Dynamics/b2ContactManager.h:22:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2BroadPhase.h:24:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2DynamicTree.h:174:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        while (stack.GetCount() > 0)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2DynamicTree.h:174:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2DynamicTree.h:232:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        while (stack.GetCount() > 0)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2DynamicTree.h:232:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 57%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2WorldCallbacks.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Dynamics/b2WorldCallbacks.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp
+[ 59%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2BlockAllocator.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Common/b2BlockAllocator.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:69:3: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 1; i <= b2_maxBlockSize; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:69:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:56:1: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+{
+^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:69:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (int32 i = 1; i <= b2_maxBlockSize; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:89:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_chunkCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:89:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:89:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:89:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:139:3: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 0; i < blockCount - 1; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:139:3: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:206:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_chunkCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2BlockAllocator.cpp:206:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 61%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Draw.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Common/b2Draw.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2Draw.cpp
+[ 63%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Math.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Common/b2Math.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2Math.cpp
+[ 65%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Settings.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Common/b2Settings.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2Settings.cpp
+[ 68%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2StackAllocator.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Common/b2StackAllocator.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2StackAllocator.cpp
+[ 70%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Timer.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Common/b2Timer.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Common/b2Timer.cpp
+[ 72%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2CircleShape.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/Shapes/b2CircleShape.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp
+[ 74%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2EdgeShape.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/Shapes/b2EdgeShape.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp
+[ 76%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2ChainShape.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/Shapes/b2ChainShape.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp
+[ 78%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2PolygonShape.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/Shapes/b2PolygonShape.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:64:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                m_vertices[i] = b2Mul(xf, m_vertices[i]);
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:64:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:139:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < tempCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:139:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:172:7: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                if (x > x0 || (x == x0 && ps[i].y < ps[i0].y))
+                    ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:169:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 1; i < n; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:185:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                hull[m] = ih;
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:185:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:205:18: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                        if (c == 0.0f && v.LengthSquared() > r.LengthSquared())
+                                      ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:188:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                for (int32 j = 1; j < n; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:231:2: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:231:2: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:244:16: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                m_normals[i].Normalize();
+                             ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:240:16: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+                int32 i2 = i + 1 < m ? i + 1 : 0;
+                             ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:248:15: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        m_centroid = ComputeCentroid(m_vertices, m);
+                     ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:95:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:255:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:255:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:281:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:281:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:346:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 1; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:346:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:19:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/Shapes/b2PolygonShape.h:22:
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/Shapes/b2Shape.h:23:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Common/b2Math.h:85:15: remark: 
+      loop not vectorized: cannot prove it is safe to reorder floating-point
+      operations; allow reordering by specifying '#pragma clang loop
+      vectorize(enable)' before the loop or by providing the compiler option
+      '-ffast-math'. [-Rpass-analysis=loop-vectorize]
+                x += v.x; y += v.y;
+                            ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:395:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:407:15: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                b2Vec2 e2 = i + 1 < m_count ? m_vertices[i+1] - s : m_ve...
+                            ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:403:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:450:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < m_count; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp:450:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 80%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2BroadPhase.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/b2BroadPhase.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2BroadPhase.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2BroadPhase.cpp:91:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2BroadPhase.cpp:86:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_moveCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2BroadPhase.cpp:91:3: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                }
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2BroadPhase.cpp:86:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_moveCount; ++i)
+        ^
+[ 82%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2CollideCircle.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/b2CollideCircle.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideCircle.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideCircle.cpp:70:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < vertexCount; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideCircle.cpp:70:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 85%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2CollideEdge.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/b2CollideEdge.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:429:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < polygonB->m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:429:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:439:22: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+        b2EPAxis edgeAxis = ComputeEdgeSeparation();
+                            ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:627:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_polygonB.count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:485:3: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 1; i < m_polygonB.count; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:485:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:627:2: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_polygonB.count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:627:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:648:2: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_polygonB.count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollideEdge.cpp:648:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 87%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2CollidePolygon.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/b2CollidePolygon.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollidePolygon.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollidePolygon.cpp:162:2: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+        b2FindIncidentEdge(incidentEdge, poly1, xf1, edge1, poly2, xf2);
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollidePolygon.cpp:82:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < count2; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollidePolygon.cpp:36:2: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < count1; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollidePolygon.cpp:36:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollidePolygon.cpp:44:3: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < count2; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2CollidePolygon.cpp:44:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+[ 89%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2Collision.cpp.o
+cd /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Build/Rbuild/Box2D && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -I/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/..  -O3 -DNDEBUG -ftree-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -o CMakeFiles/Box2D.dir/Collision/b2Collision.cpp.o -c /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:72:4: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                        for (int32 i = 0; i < manifold->pointCount; ++i)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:72:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:56:4: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                        for (int32 i = 0; i < manifold->pointCount; ++i)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:56:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:104:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < manifold2->pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:104:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:121:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 j = 0; j < manifold1->pointCount; ++j)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Collision.cpp:121:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:547:3: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 0; i < saveCount; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:547:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:537:28: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                vertex->indexB = proxyB->GetSupport(b2MulT(transformB.q, d));
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2Distance.h:111:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 1; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:534:28: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2Distance.h:111:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 1; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:477:3: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 0; i < saveCount; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:477:3: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:154:3: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 0; i < m_count; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:154:3: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:107:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 i = 0; i < m_count; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2Distance.cpp:107:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:32:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_nodeCapacity - 1; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:32:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:32:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:32:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:69:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                for (int32 i = m_nodeCount; i < m_nodeCapacity - 1; ++i)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:69:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:193:33: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                int32 child2 = m_nodes[index].child2;
+                                              ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:193:33: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:297:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        while (index != b2_nullNode)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:297:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:352:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                while (index != b2_nullNode)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:352:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:552:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        }
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:542:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_nodeCapacity; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:691:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        }
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:677:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_nodeCapacity; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:710:7: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                if (m_nodes[i].IsLeaf())
+                    ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:702:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_nodeCapacity; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:730:4: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                        for (int32 j = i + 1; j < count; ++j)
+                        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:730:4: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:775:2: remark: 
+      the cost-model indicates that vectorization is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_nodeCapacity; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2DynamicTree.cpp:775:2: remark: 
+      the cost-model indicates that interleaving is not beneficial
+      [-Rpass-analysis=loop-vectorize]
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:413:23: remark: 
+      loop not vectorized: loop control flow is not understood by vectorizer
+      [-Rpass-analysis=loop-vectorize]
+                                if (rootIterCount & 1)
+                                                  ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:413:23: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:176:25: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                                *indexA = m_proxyA->GetSupport(axisA);
+                                                    ^
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:20:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2Distance.h:111:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 1; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:159:25: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                                *indexB = m_proxyB->GetSupport(axisB);
+                                                    ^
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:20:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2Distance.h:111:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 1; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:138:25: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                                *indexA = m_proxyA->GetSupport(axisA);
+                                                    ^
+In file included from /Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:20:
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2Distance.h:111:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 1; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Collision/b2TimeOfImpact.cpp:139:25: remark: 
+      loop not vectorized: value that could not be identified as reduction is
+      used outside the loop [-Rpass-analysis=loop-vectorize]
+                                *indexB = m_proxyB->GetSupport(axisB);
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Collision/b2Distance.h:111:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 1; i < m_count; ++i)
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:55:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:55:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/../Box2D/Common/b2Math.h:103:10: remark: 
+      loop not vectorized: call instruction cannot be vectorized
+      [-Rpass-analysis=loop-vectorize]
+                return b2Sqrt(x * x + y * y);
+                       ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:77:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < count2; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:96:13: remark: 
+      loop not vectorized: call instruction cannot be vectorized
+      [-Rpass-analysis=loop-vectorize]
+                m_as[i] = b2Atan2(a, b);
+                          ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:84:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < count3; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:117:7: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+                if (m_ims[i] > 0.0f)
+                    ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:114:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:128:3: remark: 
+      loop not vectorized: call instruction cannot be vectorized
+      [-Rpass-analysis=loop-vectorize]
+                SolveC2();
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:126:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < iterations; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:134:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_count; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:134:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:168:2: remark: 
+      loop not vectorized: control flow cannot be substituted for a select
+      [-Rpass-analysis=loop-vectorize]
+        }
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:144:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+        for (int32 i = 0; i < count2; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:233:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                while (C < -b2_pi)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:233:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:227:3: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+                while (C > b2_pi)
+                ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:227:3: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:174:2: remark: 
+      vectorized loop (vectorization width: 4, interleaved count: 2)
+      [-Rpass=loop-vectorize]
+        for (int32 i = 0; i < count3; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:255:2: remark: 
+      loop not vectorized: could not determine number of loop iterations
+      [-Rpass-analysis=loop-vectorize]
+        for (int32 i = 0; i < m_count - 1; ++i)
+        ^
+/Users/JoaoSchimmelpfeng/Documents/fac/TCC/TCC/Box2D-master/Box2D/Box2D/Rope/b2Rope.cpp:255:2: remark: 
+      loop not vectorized [-Rpass-missed=loop-vectorize]
