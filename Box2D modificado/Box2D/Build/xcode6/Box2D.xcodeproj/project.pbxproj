@@ -145,6 +145,7 @@
 		80BB8A6D141C3E8600F1753A /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BB8A3B141C3E8500F1753A /* Test.cpp */; };
 		80BB8A6E141C3E8600F1753A /* TestEntries.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BB8A63141C3E8600F1753A /* TestEntries.cpp */; };
 		80BB8A75141C3F4C00F1753A /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FF01D2141C3D980059E59D /* libBox2D.a */; };
+		E6C0BD4B1EF8776B00C45C7B /* JLStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6C0BD4A1EF8776B00C45C7B /* JLStack.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,6 +392,8 @@
 		80BB8A7A141C3FA700F1753A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		80CD7722143AF3230086DB87 /* ConvexHull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexHull.h; sourceTree = "<group>"; };
 		80FF01D2141C3D980059E59D /* libBox2D.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBox2D.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C0BD491EF8738500C45C7B /* JLStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLStack.h; sourceTree = "<group>"; };
+		E6C0BD4A1EF8776B00C45C7B /* JLStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JLStack.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,6 +557,8 @@
 				80BB8949141C3E5900F1753A /* b2StackAllocator.h */,
 				80BB894A141C3E5900F1753A /* b2Timer.cpp */,
 				80BB894B141C3E5900F1753A /* b2Timer.h */,
+				E6C0BD491EF8738500C45C7B /* JLStack.h */,
+				E6C0BD4A1EF8776B00C45C7B /* JLStack.cpp */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1048,6 +1053,7 @@
 				80BB89A9141C3E5900F1753A /* b2Timer.cpp in Sources */,
 				80BB89AB141C3E5900F1753A /* b2Body.cpp in Sources */,
 				80BB89AD141C3E5900F1753A /* b2ContactManager.cpp in Sources */,
+				E6C0BD4B1EF8776B00C45C7B /* JLStack.cpp in Sources */,
 				80BB89AF141C3E5900F1753A /* b2Fixture.cpp in Sources */,
 				80BB89B1141C3E5900F1753A /* b2Island.cpp in Sources */,
 				80BB89B4141C3E5900F1753A /* b2World.cpp in Sources */,
