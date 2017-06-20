@@ -33,13 +33,14 @@
 #include "Box2D/Common/b2Draw.h"
 #include "Box2D/Common/b2Timer.h"
 #include <new>
+#include <vector>
+#include <thread>
 
 b2World::b2World(const b2Vec2& gravity)
 {
 	m_destructionListener = NULL;
 	g_debugDraw = NULL;
 
-	m_bodyList = NULL;
 	m_jointList = NULL;
 
 	m_bodyCount = 0;
@@ -66,22 +67,19 @@ b2World::b2World(const b2Vec2& gravity)
 b2World::~b2World()
 {
 	// Some shapes allocate using b2Alloc.
-	b2Body* b = m_bodyList;
-	while (b)
-	{
-		b2Body* bNext = b->m_next;
-
-		b2Fixture* f = b->m_fixtureList;
-		while (f)
-		{
-			b2Fixture* fNext = f->m_next;
-			f->m_proxyCount = 0;
-			f->Destroy(&m_blockAllocator);
-			f = fNext;
-		}
-
-		b = bNext;
-	}
+    int i;
+    for(i = 0; i < m_bodyList.size(); i++)
+    {
+        b2Body* b = m_bodyList[i];
+        b2Fixture* f = b->m_fixtureList;
+        while (f)
+        {
+            b2Fixture* fNext = f->m_next;
+            f->m_proxyCount = 0;
+            f->Destroy(&m_blockAllocator);
+            f = fNext;
+        }
+    }
 }
 
 void b2World::SetDestructionListener(b2DestructionListener* listener)
@@ -115,14 +113,8 @@ b2Body* b2World::CreateBody(const b2BodyDef* def)
 	void* mem = m_blockAllocator.Allocate(sizeof(b2Body));
 	b2Body* b = new (mem) b2Body(def, this);
 
-	// Add to world doubly linked list.
-	b->m_prev = NULL;
-	b->m_next = m_bodyList;
-	if (m_bodyList)
-	{
-		m_bodyList->m_prev = b;
-	}
-	m_bodyList = b;
+	// Insert it on the vector
+    m_bodyList.insert(m_bodyList.begin(), b);
 	++m_bodyCount;
 
 	return b;
@@ -199,9 +191,9 @@ void b2World::DestroyBody(b2Body* b)
 		b->m_next->m_prev = b->m_prev;
 	}
 
-	if (b == m_bodyList)
+	if (b == m_bodyList.back())
 	{
-		m_bodyList = b->m_next;
+        m_bodyList.erase(m_bodyList.begin());
 	}
 
 	--m_bodyCount;
@@ -375,11 +367,33 @@ void b2World::SetAllowSleeping(bool flag)
 	m_allowSleep = flag;
 	if (m_allowSleep == false)
 	{
-		for (b2Body* b = m_bodyList; b; b = b->m_next)
+        int i;
+		for (i = 0; i < m_bodyList.size(); i++)
 		{
+            b2Body *b = m_bodyList[i];
 			b->SetAwake(true);
 		}
 	}
+}
+
+void b2World::clearFlags()
+{
+    int i;
+    for (i = 0; i < m_bodyList.size(); i++)
+    {
+        b2Body *b = m_bodyList[i];
+        b->m_flags &= ~b2Body::e_islandFlag;
+    }
+    
+    for (b2Contact* c = m_contactManager.m_contactList; c; c = c->m_next)
+    {
+        c->m_flags &= ~b2Contact::e_islandFlag;
+    }
+    
+    for (b2Joint* j = m_jointList; j; j = j->m_next)
+    {
+        j->m_islandFlag = false;
+    }
 }
 
 // Find islands, integrate and solve constraints, solve position constraints
@@ -397,24 +411,15 @@ void b2World::Solve(const b2TimeStep& step)
 					m_contactManager.m_contactListener);
 
 	// Clear all the island flags.
-	for (b2Body* b = m_bodyList; b; b = b->m_next)
-	{
-		b->m_flags &= ~b2Body::e_islandFlag;
-	}
-	for (b2Contact* c = m_contactManager.m_contactList; c; c = c->m_next)
-	{
-		c->m_flags &= ~b2Contact::e_islandFlag;
-	}
-	for (b2Joint* j = m_jointList; j; j = j->m_next)
-	{
-		j->m_islandFlag = false;
-	}
+    clearFlags();
 
 	// Build and simulate all awake islands.
 	int32 stackSize = m_bodyCount;
 	b2Body** stack = (b2Body**)m_stackAllocator.Allocate(stackSize * sizeof(b2Body*));
-	for (b2Body* seed = m_bodyList; seed; seed = seed->m_next)
+    int i;
+    for (i = 0; i < m_bodyList.size();i++)
 	{
+        b2Body* seed = m_bodyList[i];
 		if (seed->m_flags & b2Body::e_islandFlag)
 		{
 			continue;
@@ -550,8 +555,10 @@ void b2World::Solve(const b2TimeStep& step)
 	{
 		b2Timer timer;
 		// Synchronize fixtures, check for out of range bodies.
-		for (b2Body* b = m_bodyList; b; b = b->GetNext())
+        int i;
+        for (i=0; i < m_bodyList.size(); i++)
 		{
+            b2Body* b = m_bodyList[i];
 			// If a body was not in an island then it did not move.
 			if ((b->m_flags & b2Body::e_islandFlag) == 0)
 			{
@@ -580,8 +587,10 @@ void b2World::SolveTOI(const b2TimeStep& step)
 
 	if (m_stepComplete)
 	{
-		for (b2Body* b = m_bodyList; b; b = b->m_next)
+        int i;
+        for (i=0; i < m_bodyList.size(); i++)
 		{
+            b2Body* b = m_bodyList[i];
 			b->m_flags &= ~b2Body::e_islandFlag;
 			b->m_sweep.alpha0 = 0.0f;
 		}
@@ -964,8 +973,10 @@ void b2World::Step(float32 dt, int32 velocityIterations, int32 positionIteration
 
 void b2World::ClearForces()
 {
-	for (b2Body* body = m_bodyList; body; body = body->GetNext())
-	{
+    int i;
+    for (i=0; i < m_bodyList.size(); i++)
+    {
+        b2Body* body = m_bodyList[i];
 		body->m_force.SetZero();
 		body->m_torque = 0.0f;
 	}
@@ -1161,8 +1172,10 @@ void b2World::DrawDebugData()
 
 	if (flags & b2Draw::e_shapeBit)
 	{
-		for (b2Body* b = m_bodyList; b; b = b->GetNext())
-		{
+        int i;
+        for (i=0; i < m_bodyList.size(); i++)
+        {
+            b2Body* b = m_bodyList[i];
 			const b2Transform& xf = b->GetTransform();
 			for (b2Fixture* f = b->GetFixtureList(); f; f = f->GetNext())
 			{
@@ -1218,8 +1231,10 @@ void b2World::DrawDebugData()
 		b2Color color(0.9f, 0.3f, 0.9f);
 		b2BroadPhase* bp = &m_contactManager.m_broadPhase;
 
-		for (b2Body* b = m_bodyList; b; b = b->GetNext())
-		{
+        int i;
+        for (i=0; i < m_bodyList.size(); i++)
+        {
+            b2Body* b = m_bodyList[i];
 			if (b->IsActive() == false)
 			{
 				continue;
@@ -1245,8 +1260,10 @@ void b2World::DrawDebugData()
 
 	if (flags & b2Draw::e_centerOfMassBit)
 	{
-		for (b2Body* b = m_bodyList; b; b = b->GetNext())
-		{
+        int i;
+        for (i=0; i < m_bodyList.size(); i++)
+        {
+            b2Body* b = m_bodyList[i];
 			b2Transform xf = b->GetTransform();
 			xf.p = b->GetWorldCenter();
 			g_debugDraw->DrawTransform(xf);
@@ -1282,8 +1299,10 @@ void b2World::ShiftOrigin(const b2Vec2& newOrigin)
 		return;
 	}
 
-	for (b2Body* b = m_bodyList; b; b = b->m_next)
-	{
+    int i;
+    for (i=0; i < m_bodyList.size(); i++)
+    {
+        b2Body* b = m_bodyList[i];
 		b->m_xf.p -= newOrigin;
 		b->m_sweep.c0 -= newOrigin;
 		b->m_sweep.c -= newOrigin;
@@ -1310,8 +1329,10 @@ void b2World::Dump()
 	b2Log("b2Body** bodies = (b2Body**)b2Alloc(%d * sizeof(b2Body*));\n", m_bodyCount);
 	b2Log("b2Joint** joints = (b2Joint**)b2Alloc(%d * sizeof(b2Joint*));\n", m_jointCount);
 	int32 i = 0;
-	for (b2Body* b = m_bodyList; b; b = b->m_next)
-	{
+    int z;
+    for (z=0; i < m_bodyList.size(); z++)
+    {
+        b2Body* b = m_bodyList[z];
 		b->m_islandIndex = i;
 		b->Dump();
 		++i;

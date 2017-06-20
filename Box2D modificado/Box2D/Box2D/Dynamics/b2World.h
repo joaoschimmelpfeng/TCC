@@ -25,6 +25,7 @@
 #include "Box2D/Dynamics/b2ContactManager.h"
 #include "Box2D/Dynamics/b2WorldCallbacks.h"
 #include "Box2D/Dynamics/b2TimeStep.h"
+#include <vector>
 
 struct b2AABB;
 struct b2BodyDef;
@@ -230,6 +231,10 @@ private:
 	void DrawJoint(b2Joint* joint);
 	void DrawShape(b2Fixture* shape, const b2Transform& xf, const b2Color& color);
 
+    
+    //JLSolution
+    void clearFlags();
+    
 	b2BlockAllocator m_blockAllocator;
 	b2StackAllocator m_stackAllocator;
 
@@ -237,7 +242,7 @@ private:
 
 	b2ContactManager m_contactManager;
 
-	b2Body* m_bodyList;
+	std::vector<b2Body*> m_bodyList;
 	b2Joint* m_jointList;
 
 	int32 m_bodyCount;
@@ -265,12 +270,12 @@ private:
 
 inline b2Body* b2World::GetBodyList()
 {
-	return m_bodyList;
+	return m_bodyList.back();
 }
 
 inline const b2Body* b2World::GetBodyList() const
 {
-	return m_bodyList;
+	return m_bodyList.back();
 }
 
 inline b2Joint* b2World::GetJointList()

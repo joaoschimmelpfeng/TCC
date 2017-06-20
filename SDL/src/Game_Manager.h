@@ -8,12 +8,17 @@ class Game_Manager
 {
 	public:
 		Game_Manager(int w,int h);
-		~Game_Manager();
+		Game_Manager();
 		Entity_Object **entityMatrix;
 		int sizex;
 		int sizey;
 		void Update();
 		void Render(SDL_Renderer *renderer);
 };
+
+inline Game_Manager::Game_Manager()
+{
+
+}
 
 #endif
