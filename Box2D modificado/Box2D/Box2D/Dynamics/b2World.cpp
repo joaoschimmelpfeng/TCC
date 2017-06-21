@@ -36,6 +36,9 @@
 #include <vector>
 #include <thread>
 
+
+const size_t nthreads = std::thread::hardware_concurrency();
+
 b2World::b2World(const b2Vec2& gravity)
 {
 	m_destructionListener = NULL;
@@ -378,12 +381,27 @@ void b2World::SetAllowSleeping(bool flag)
 
 void b2World::clearFlags()
 {
-    int i;
-    for (i = 0; i < m_bodyList.size(); i++)
+    //JLParallel
+    std::vector<std::thread> threads(nthreads);
+    for(int t = 0;t<nthreads;t++)
     {
-        b2Body *b = m_bodyList[i];
-        b->m_flags &= ~b2Body::e_islandFlag;
+    
+        threads[t] = std::thread(std::bind(
+                                       [&](const int bi, const int ei, const int t)
+                                           {
+        int i;
+        for (i = bi; i < ei; i++)
+        {
+            b2Body *b = m_bodyList[i];
+            b->m_flags &= ~b2Body::e_islandFlag;
+        }
+                                           },
+                                           t*m_bodyList.size()/nthreads,(t+1)==nthreads?m_bodyList.size():(t+1)*m_bodyList.size()/nthreads,t));
+                                           
+                                           
     }
+    std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
+    
     
     for (b2Contact* c = m_contactManager.m_contactList; c; c = c->m_next)
     {
@@ -416,6 +434,9 @@ void b2World::Solve(const b2TimeStep& step)
 	// Build and simulate all awake islands.
 	int32 stackSize = m_bodyCount;
 	b2Body** stack = (b2Body**)m_stackAllocator.Allocate(stackSize * sizeof(b2Body*));
+    
+    
+    
     int i;
     for (i = 0; i < m_bodyList.size();i++)
 	{
@@ -443,6 +464,7 @@ void b2World::Solve(const b2TimeStep& step)
 		seed->m_flags |= b2Body::e_islandFlag;
 
 		// Perform a depth first search (DFS) on the constraint graph.
+
 		while (stackCount > 0)
 		{
 			// Grab the next body off the stack and add it to the island.
@@ -531,9 +553,10 @@ void b2World::Solve(const b2TimeStep& step)
 				other->m_flags |= b2Body::e_islandFlag;
 			}
 		}
-
+    
+    
 		b2Profile profile;
-		island.Solve(&profile, step, m_gravity, m_allowSleep);
+        island.Solve(&profile, step, m_gravity, m_allowSleep);
 		m_profile.solveInit += profile.solveInit;
 		m_profile.solveVelocity += profile.solveVelocity;
 		m_profile.solvePosition += profile.solvePosition;
@@ -549,8 +572,8 @@ void b2World::Solve(const b2TimeStep& step)
 			}
 		}
 	}
-
-	m_stackAllocator.Free(stack);
+    
+    m_stackAllocator.Free(stack);
 
 	{
 		b2Timer timer;

@@ -26,6 +26,7 @@
 #include "Box2D/Dynamics/Joints/b2Joint.h"
 #include "Box2D/Common/b2StackAllocator.h"
 #include "Box2D/Common/b2Timer.h"
+#include <omp.h>
 
 /*
 Position Correction Notes
@@ -182,47 +183,46 @@ b2Island::~b2Island()
 
 void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& gravity, bool allowSleep)
 {
+    
 	b2Timer timer;
 
 	float32 h = step.dt;
-
-	// Integrate velocities and apply damping. Initialize the body state.
-	for (int32 i = 0; i < m_bodyCount; ++i)
-	{
-		b2Body* b = m_bodies[i];
-
-		b2Vec2 c = b->m_sweep.c;
-		float32 a = b->m_sweep.a;
-		b2Vec2 v = b->m_linearVelocity;
-		float32 w = b->m_angularVelocity;
-
-		// Store positions for continuous collision.
-		b->m_sweep.c0 = b->m_sweep.c;
-		b->m_sweep.a0 = b->m_sweep.a;
-
-		if (b->m_type == b2_dynamicBody)
-		{
-			// Integrate velocities.
-			v += h * (b->m_gravityScale * gravity + b->m_invMass * b->m_force);
-			w += h * b->m_invI * b->m_torque;
-
-			// Apply damping.
-			// ODE: dv/dt + c * v = 0
-			// Solution: v(t) = v0 * exp(-c * t)
-			// Time step: v(t + dt) = v0 * exp(-c * (t + dt)) = v0 * exp(-c * t) * exp(-c * dt) = v * exp(-c * dt)
-			// v2 = exp(-c * dt) * v1
-			// Pade approximation:
-			// v2 = v1 * 1 / (1 + c * dt)
-			v *= 1.0f / (1.0f + h * b->m_linearDamping);
-			w *= 1.0f / (1.0f + h * b->m_angularDamping);
-		}
-
-		m_positions[i].c = c;
-		m_positions[i].a = a;
-		m_velocities[i].v = v;
-		m_velocities[i].w = w;
-	}
-
+    // Integrate velocities and apply damping. Initialize the body state.
+    for (int32 i = 0; i < m_bodyCount; ++i)
+        {
+        b2Body* b = m_bodies[i];
+        
+        b2Vec2 c = b->m_sweep.c;
+        float32 a = b->m_sweep.a;
+        b2Vec2 v = b->m_linearVelocity;
+        float32 w = b->m_angularVelocity;
+        
+        // Store positions for continuous collision.
+        b->m_sweep.c0 = b->m_sweep.c;
+        b->m_sweep.a0 = b->m_sweep.a;
+        
+        if (b->m_type == b2_dynamicBody)
+            {
+            // Integrate velocities.
+            v += h * (b->m_gravityScale * gravity + b->m_invMass * b->m_force);
+            w += h * b->m_invI * b->m_torque;
+            
+            // Apply damping.
+            // ODE: dv/dt + c * v = 0
+            // Solution: v(t) = v0 * exp(-c * t)
+            // Time step: v(t + dt) = v0 * exp(-c * (t + dt)) = v0 * exp(-c * t) * exp(-c * dt) = v * exp(-c * dt)
+            // v2 = exp(-c * dt) * v1
+            // Pade approximation:
+            // v2 = v1 * 1 / (1 + c * dt)
+            v *= 1.0f / (1.0f + h * b->m_linearDamping);
+            w *= 1.0f / (1.0f + h * b->m_angularDamping);
+            }
+        
+        m_positions[i].c = c;
+        m_positions[i].a = a;
+        m_velocities[i].v = v;
+        m_velocities[i].w = w;
+        }
 	timer.Reset();
 
 	// Solver data
@@ -257,6 +257,7 @@ void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& g
 
 	// Solve velocity constraints
 	timer.Reset();
+#pragma omp parallel for
 	for (int32 i = 0; i < step.velocityIterations; ++i)
 	{
 		for (int32 j = 0; j < m_jointCount; ++j)
@@ -379,6 +380,210 @@ void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& g
 			}
 		}
 	}
+}
+
+void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2& gravity, bool allowSleep)
+{
+    printf("Mbody: %i",m_bodyCount);
+    b2Timer timer;
+    
+    float32 h = step.dt;
+    // Integrate velocities and apply damping. Initialize the body state.
+    #pragma omp parallel for
+    for (int32 i = 0; i < m_bodyCount; ++i)
+        {
+        b2Body* b = m_bodies[i];
+        
+        b2Vec2 c = b->m_sweep.c;
+        float32 a = b->m_sweep.a;
+        b2Vec2 v = b->m_linearVelocity;
+        float32 w = b->m_angularVelocity;
+        
+        // Store positions for continuous collision.
+        b->m_sweep.c0 = b->m_sweep.c;
+        b->m_sweep.a0 = b->m_sweep.a;
+        
+        if (b->m_type == b2_dynamicBody)
+            {
+            // Integrate velocities.
+            v += h * (b->m_gravityScale * gravity + b->m_invMass * b->m_force);
+            w += h * b->m_invI * b->m_torque;
+            
+            // Apply damping.
+            // ODE: dv/dt + c * v = 0
+            // Solution: v(t) = v0 * exp(-c * t)
+            // Time step: v(t + dt) = v0 * exp(-c * (t + dt)) = v0 * exp(-c * t) * exp(-c * dt) = v * exp(-c * dt)
+            // v2 = exp(-c * dt) * v1
+            // Pade approximation:
+            // v2 = v1 * 1 / (1 + c * dt)
+            v *= 1.0f / (1.0f + h * b->m_linearDamping);
+            w *= 1.0f / (1.0f + h * b->m_angularDamping);
+            }
+        
+        m_positions[i].c = c;
+        m_positions[i].a = a;
+        m_velocities[i].v = v;
+        m_velocities[i].w = w;
+        }
+    timer.Reset();
+    
+    // Solver data
+    b2SolverData solverData;
+    solverData.step = step;
+    solverData.positions = m_positions;
+    solverData.velocities = m_velocities;
+    
+    // Initialize velocity constraints.
+    b2ContactSolverDef contactSolverDef;
+    contactSolverDef.step = step;
+    contactSolverDef.contacts = m_contacts;
+    contactSolverDef.count = m_contactCount;
+    contactSolverDef.positions = m_positions;
+    contactSolverDef.velocities = m_velocities;
+    contactSolverDef.allocator = m_allocator;
+    
+    b2ContactSolver contactSolver(&contactSolverDef);
+    contactSolver.InitializeVelocityConstraints();
+    
+    if (step.warmStarting)
+        {
+        contactSolver.WarmStart();
+        }
+    
+    for (int32 i = 0; i < m_jointCount; ++i)
+        {
+        m_joints[i]->InitVelocityConstraints(solverData);
+        }
+    
+    profile->solveInit = timer.GetMilliseconds();
+    
+    // Solve velocity constraints
+    timer.Reset();
+#pragma omp parallel for
+    for (int32 i = 0; i < step.velocityIterations; ++i)
+        {
+        for (int32 j = 0; j < m_jointCount; ++j)
+            {
+            m_joints[j]->SolveVelocityConstraints(solverData);
+            }
+        
+        contactSolver.SolveVelocityConstraints();
+        }
+    
+    // Store impulses for warm starting
+    contactSolver.StoreImpulses();
+    profile->solveVelocity = timer.GetMilliseconds();
+    
+    // Integrate positions
+#pragma omp parallel for
+    for (int32 i = 0; i < m_bodyCount; ++i)
+        {
+        b2Vec2 c = m_positions[i].c;
+        float32 a = m_positions[i].a;
+        b2Vec2 v = m_velocities[i].v;
+        float32 w = m_velocities[i].w;
+        
+        // Check for large velocities
+        b2Vec2 translation = h * v;
+        if (b2Dot(translation, translation) > b2_maxTranslationSquared)
+            {
+            float32 ratio = b2_maxTranslation / translation.Length();
+            v *= ratio;
+            }
+        
+        float32 rotation = h * w;
+        if (rotation * rotation > b2_maxRotationSquared)
+            {
+            float32 ratio = b2_maxRotation / b2Abs(rotation);
+            w *= ratio;
+            }
+        
+        // Integrate
+        c += h * v;
+        a += h * w;
+        
+        m_positions[i].c = c;
+        m_positions[i].a = a;
+        m_velocities[i].v = v;
+        m_velocities[i].w = w;
+        }
+    
+    // Solve position constraints
+    timer.Reset();
+    bool positionSolved = false;
+    for (int32 i = 0; i < step.positionIterations; ++i)
+        {
+        bool contactsOkay = contactSolver.SolvePositionConstraints();
+        
+        bool jointsOkay = true;
+        for (int32 j = 0; j < m_jointCount; ++j)
+            {
+            bool jointOkay = m_joints[j]->SolvePositionConstraints(solverData);
+            jointsOkay = jointsOkay && jointOkay;
+            }
+        
+        if (contactsOkay && jointsOkay)
+            {
+            // Exit early if the position errors are small.
+            positionSolved = true;
+            break;
+            }
+        }
+    
+    // Copy state buffers back to the bodies
+#pragma omp parallel for
+    for (int32 i = 0; i < m_bodyCount; ++i)
+        {
+        b2Body* body = m_bodies[i];
+        body->m_sweep.c = m_positions[i].c;
+        body->m_sweep.a = m_positions[i].a;
+        body->m_linearVelocity = m_velocities[i].v;
+        body->m_angularVelocity = m_velocities[i].w;
+        body->SynchronizeTransform();
+        }
+    
+    profile->solvePosition = timer.GetMilliseconds();
+    
+    Report(contactSolver.m_velocityConstraints);
+    
+    if (allowSleep)
+        {
+        float32 minSleepTime = b2_maxFloat;
+        
+        const float32 linTolSqr = b2_linearSleepTolerance * b2_linearSleepTolerance;
+        const float32 angTolSqr = b2_angularSleepTolerance * b2_angularSleepTolerance;
+        
+        for (int32 i = 0; i < m_bodyCount; ++i)
+            {
+            b2Body* b = m_bodies[i];
+            if (b->GetType() == b2_staticBody)
+                {
+                continue;
+                }
+            
+            if ((b->m_flags & b2Body::e_autoSleepFlag) == 0 ||
+                b->m_angularVelocity * b->m_angularVelocity > angTolSqr ||
+                b2Dot(b->m_linearVelocity, b->m_linearVelocity) > linTolSqr)
+                {
+                b->m_sleepTime = 0.0f;
+                minSleepTime = 0.0f;
+                }
+            else
+                {
+                b->m_sleepTime += h;
+                minSleepTime = b2Min(minSleepTime, b->m_sleepTime);
+                }
+            }
+        
+        if (minSleepTime >= b2_timeToSleep && positionSolved)
+            {
+            for (int32 i = 0; i < m_bodyCount; ++i)
+                {
+                b2Body* b = m_bodies[i];
+                b->SetAwake(false);
+                }
+            }
+        }
 }
 
 void b2Island::SolveTOI(const b2TimeStep& subStep, int32 toiIndexA, int32 toiIndexB)

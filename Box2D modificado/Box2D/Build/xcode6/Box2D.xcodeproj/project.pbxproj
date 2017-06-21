@@ -145,6 +145,7 @@
 		80BB8A6D141C3E8600F1753A /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BB8A3B141C3E8500F1753A /* Test.cpp */; };
 		80BB8A6E141C3E8600F1753A /* TestEntries.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BB8A63141C3E8600F1753A /* TestEntries.cpp */; };
 		80BB8A75141C3F4C00F1753A /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FF01D2141C3D980059E59D /* libBox2D.a */; };
+		E625E1FC1EFAD716001067B0 /* libomp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E625E1F91EFAD6B6001067B0 /* libomp.dylib */; };
 		E6C0BD4B1EF8776B00C45C7B /* JLStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6C0BD4A1EF8776B00C45C7B /* JLStack.cpp */; };
 /* End PBXBuildFile section */
 
@@ -392,6 +393,8 @@
 		80BB8A7A141C3FA700F1753A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		80CD7722143AF3230086DB87 /* ConvexHull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexHull.h; sourceTree = "<group>"; };
 		80FF01D2141C3D980059E59D /* libBox2D.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBox2D.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E625E1F41EFACF57001067B0 /* libomp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libomp.dylib; path = ../../../../../../../../../../usr/local/Cellar/llvm/4.0.0_1/lib/libomp.dylib; sourceTree = "<group>"; };
+		E625E1F91EFAD6B6001067B0 /* libomp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libomp.dylib; path = ../../../../../../../../../../usr/local/Cellar/llvm/4.0.0_1/lib/libomp.dylib; sourceTree = "<group>"; };
 		E6C0BD491EF8738500C45C7B /* JLStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLStack.h; sourceTree = "<group>"; };
 		E6C0BD4A1EF8776B00C45C7B /* JLStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JLStack.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				806AF7AC1CC9ED7600D3F7E1 /* OpenGL.framework in Frameworks */,
+				E625E1FC1EFAD716001067B0 /* libomp.dylib in Frameworks */,
 				806AF7A91CC9ED4200D3F7E1 /* libBox2D.a in Frameworks */,
 				806AF7AA1CC9ED4200D3F7E1 /* libGLFW.a in Frameworks */,
 				806AF7AB1CC9ED4200D3F7E1 /* libImGui.a in Frameworks */,
@@ -495,9 +499,9 @@
 			isa = PBXGroup;
 			children = (
 				80BB8923141C3E5900F1753A /* Box2D.h */,
+				80BB894C141C3E5900F1753A /* Dynamics */,
 				80BB8926141C3E5900F1753A /* Collision */,
 				80BB893E141C3E5900F1753A /* Common */,
-				80BB894C141C3E5900F1753A /* Dynamics */,
 				80BB8984141C3E5900F1753A /* Rope */,
 			);
 			name = Box2D;
@@ -741,6 +745,7 @@
 		80FF01C7141C3D980059E59D = {
 			isa = PBXGroup;
 			children = (
+				E625E1F91EFAD6B6001067B0 /* libomp.dylib */,
 				806AF7831CC9EA5F00D3F7E1 /* imgui */,
 				80B51B661CC74B00008DDE73 /* CoreVideo.framework */,
 				80A3907B1852F2D100E19E2B /* IOKit.framework */,
@@ -752,6 +757,7 @@
 				80BB8A31141C3E7B00F1753A /* HelloWorld */,
 				80BB8922141C3E5900F1753A /* Box2D */,
 				80FF01D3141C3D980059E59D /* Products */,
+				E625E1F31EFACF57001067B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -765,6 +771,14 @@
 				80B51B3A1CC74762008DDE73 /* libImGui.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E625E1F31EFACF57001067B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E625E1F41EFACF57001067B0 /* libomp.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1236,6 +1250,10 @@
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/llvm/4.0.0_1/lib,
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DGLFW_INCLUDE_GLCOREARB",
@@ -1251,6 +1269,10 @@
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/llvm/4.0.0_1/lib,
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DGLFW_INCLUDE_GLCOREARB",
@@ -1293,8 +1315,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../..;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1327,7 +1351,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../..;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1335,10 +1361,27 @@
 		80FF01D7141C3D980059E59D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = /usr/local/opt/llvm/bin/clang;
 				COMBINE_HIDPI_IMAGES = YES;
+				CPLUS_INCLUDE_PATH = /usr/local/Cellar/llvm/4.0.0_1/lib/clang/4.0.0;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
+				HEADER_SEARCH_PATHS = (
+					../..,
+					/usr/local/opt/llvm/lib/clang/4.0.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/opt/llvm/lib,
+					/usr/local/Cellar/llvm/4.0.0_1/lib,
+				);
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-O3",
+					"-fopenmp",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1346,10 +1389,27 @@
 		80FF01D8141C3D980059E59D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = /usr/local/opt/llvm/bin/clang;
 				COMBINE_HIDPI_IMAGES = YES;
+				CPLUS_INCLUDE_PATH = /usr/local/Cellar/llvm/4.0.0_1/lib/clang/4.0.0;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
+				HEADER_SEARCH_PATHS = (
+					../..,
+					/usr/local/opt/llvm/lib/clang/4.0.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/opt/llvm/lib,
+					/usr/local/Cellar/llvm/4.0.0_1/lib,
+				);
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-O3",
+					"-fopenmp",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
