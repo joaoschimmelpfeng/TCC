@@ -183,7 +183,11 @@ b2Island::~b2Island()
 
 void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& gravity, bool allowSleep)
 {
-    
+    if(m_bodyCount > 500)
+    {
+        SolveMP(profile, step, gravity, allowSleep);
+        return;
+    }
 	b2Timer timer;
 
 	float32 h = step.dt;
@@ -257,7 +261,7 @@ void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& g
 
 	// Solve velocity constraints
 	timer.Reset();
-#pragma omp parallel for
+
 	for (int32 i = 0; i < step.velocityIterations; ++i)
 	{
 		for (int32 j = 0; j < m_jointCount; ++j)
@@ -384,12 +388,11 @@ void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& g
 
 void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2& gravity, bool allowSleep)
 {
-    printf("Mbody: %i",m_bodyCount);
     b2Timer timer;
     
     float32 h = step.dt;
     // Integrate velocities and apply damping. Initialize the body state.
-    #pragma omp parallel for
+#pragma omp parallel for
     for (int32 i = 0; i < m_bodyCount; ++i)
         {
         b2Body* b = m_bodies[i];
@@ -449,7 +452,7 @@ void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2&
         {
         contactSolver.WarmStart();
         }
-    
+
     for (int32 i = 0; i < m_jointCount; ++i)
         {
         m_joints[i]->InitVelocityConstraints(solverData);
@@ -459,7 +462,6 @@ void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2&
     
     // Solve velocity constraints
     timer.Reset();
-#pragma omp parallel for
     for (int32 i = 0; i < step.velocityIterations; ++i)
         {
         for (int32 j = 0; j < m_jointCount; ++j)
@@ -470,9 +472,11 @@ void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2&
         contactSolver.SolveVelocityConstraints();
         }
     
+    
     // Store impulses for warm starting
     contactSolver.StoreImpulses();
     profile->solveVelocity = timer.GetMilliseconds();
+    
     
     // Integrate positions
 #pragma omp parallel for
@@ -508,6 +512,7 @@ void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2&
         m_velocities[i].w = w;
         }
     
+    
     // Solve position constraints
     timer.Reset();
     bool positionSolved = false;
@@ -531,7 +536,7 @@ void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2&
         }
     
     // Copy state buffers back to the bodies
-#pragma omp parallel for
+    #pragma omp parallel for
     for (int32 i = 0; i < m_bodyCount; ++i)
         {
         b2Body* body = m_bodies[i];
@@ -552,7 +557,7 @@ void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2&
         
         const float32 linTolSqr = b2_linearSleepTolerance * b2_linearSleepTolerance;
         const float32 angTolSqr = b2_angularSleepTolerance * b2_angularSleepTolerance;
-        
+        #pragma omp parallel for
         for (int32 i = 0; i < m_bodyCount; ++i)
             {
             b2Body* b = m_bodies[i];
@@ -584,6 +589,7 @@ void b2Island::SolveMP(b2Profile* profile, const b2TimeStep& step, const b2Vec2&
                 }
             }
         }
+    
 }
 
 void b2Island::SolveTOI(const b2TimeStep& subStep, int32 toiIndexA, int32 toiIndexB)
@@ -592,6 +598,7 @@ void b2Island::SolveTOI(const b2TimeStep& subStep, int32 toiIndexA, int32 toiInd
 	b2Assert(toiIndexB < m_bodyCount);
 
 	// Initialize the body state.
+#pragma omp parallel for
 	for (int32 i = 0; i < m_bodyCount; ++i)
 	{
 		b2Body* b = m_bodies[i];
@@ -622,6 +629,7 @@ void b2Island::SolveTOI(const b2TimeStep& subStep, int32 toiIndexA, int32 toiInd
 
 #if 0
 	// Is the new position really safe?
+    #pragma omp parallel for
 	for (int32 i = 0; i < m_contactCount; ++i)
 	{
 		b2Contact* c = m_contacts[i];
@@ -675,6 +683,7 @@ void b2Island::SolveTOI(const b2TimeStep& subStep, int32 toiIndexA, int32 toiInd
 	float32 h = subStep.dt;
 
 	// Integrate positions
+#pragma omp parallel for
 	for (int32 i = 0; i < m_bodyCount; ++i)
 	{
 		b2Vec2 c = m_positions[i].c;

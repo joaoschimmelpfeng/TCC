@@ -51,7 +51,7 @@ namespace
 	GLFWwindow* mainWindow = NULL;
 	UIState ui;
 
-	int32 testIndex = 0;
+	int32 testIndex = 51;
 	int32 testSelection = 0;
 	int32 testCount = 0;
 	TestEntry* entry;
@@ -60,6 +60,9 @@ namespace
 	bool rightMouseDown;
 	b2Vec2 lastp;
 }
+
+float highFT = 0;
+float totalFT = 0;
 
 //
 static void sCreateUI(GLFWwindow* window)
@@ -520,6 +523,12 @@ int main(int, char**)
 		ImGui::Begin("Overlay", NULL, ImVec2(0,0), 0.0f, ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoInputs|ImGuiWindowFlags_AlwaysAutoResize|ImGuiWindowFlags_NoScrollbar);
 		ImGui::SetCursorPos(ImVec2(5, (float)g_camera.m_height - 20));
 		ImGui::Text("%.1f ms", 1000.0 * frameTime);
+        totalFT += 1000.0*frameTime;
+        if(1000.0 * frameTime > highFT)
+        {
+            highFT = 1000.0*frameTime;
+            printf("\nHighest frame time: %.1f\nTotal: %.1f",highFT,totalFT);
+        }
 		ImGui::End();
 
 		sSimulate();

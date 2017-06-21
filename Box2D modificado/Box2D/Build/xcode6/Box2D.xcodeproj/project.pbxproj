@@ -1257,6 +1257,7 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DGLFW_INCLUDE_GLCOREARB",
+					"-O3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1276,6 +1277,7 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DGLFW_INCLUDE_GLCOREARB",
+					"-O3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
